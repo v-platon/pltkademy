@@ -1,0 +1,10 @@
+#!/bin/bash
+#переходим в папку где нужно создавать файлы
+cd /test/directory
+for ((i=1; i<=10; i++))
+do
+#записываем время в переменную
+time=`date '+%H%M%S'`
+#создаем файл наполняя его 1000 случайных символов
+dd if=/dev/random of=test_$time_$i.txt count=1000
+done
